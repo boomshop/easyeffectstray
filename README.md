@@ -16,3 +16,5 @@ chmod a+x pulseeffects
 And execute it.
 
 The icons are not required since graphics data is base64 encoded in the script itself.
+
+If you'd like to bypass PulseEffects on click, create a fresh preset called `Bypass`, disable all signal processors and save the settings to the preset. It will appear in the tray icons menu then.
