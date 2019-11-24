@@ -1,6 +1,6 @@
 PulseEffectsTray 0.1
 
-This is some kind of hacky stand-alone add-on for PulseEffects by Wellington Wallace:
+This is some kind of quick'n'dirty stand-alone add-on for PulseEffects by Wellington Wallace:
 
 https://github.com/wwmm/pulseeffects
 
