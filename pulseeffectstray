@@ -150,9 +150,6 @@ class Icon ():
         self.menu.append(qicon)
 
         self.menu.show_all()
-        
-        def pos(menu, icon):
-            return (Gtk.StatusIcon.position_menu(menu, icon))
         self.menu.popup(None, None, None, self.icon, 0, time)
         
     def leftclick (self, icon):
