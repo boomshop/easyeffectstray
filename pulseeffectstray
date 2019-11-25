@@ -139,14 +139,12 @@ class Icon ():
         
         qpe = Gtk.MenuItem()
         qpe.set_label("Quit PulseEffects")
+        qpe.connect("activate", self.quit)
+        self.menu.append(qpe)
         
         qicon = Gtk.MenuItem()
         qicon.set_label("Quit StatusIcon")
-
-        qpe.connect("activate", self.quit)
         qicon.connect("activate", kill)
-
-        self.menu.append(qpe)
         self.menu.append(qicon)
 
         self.menu.show_all()
