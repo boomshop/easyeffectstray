@@ -16,7 +16,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="icons.svg">
+   sodipodi:docname="pulseeffectstray.svg">
   <defs
      id="defs">
     <linearGradient
@@ -75,13 +75,13 @@
        id="linearGradient878-381-763-805"
        inkscape:collect="always">
       <stop
-         id="stop1648"
+         style="stop-color:#f14ee8;stop-opacity:1;opacity:1"
          offset="0"
-         style="stop-color:#c83737;stop-opacity:1;opacity:1" />
+         id="stop1650" />
       <stop
-         id="stop1650"
+         style="stop-color:#058fdb;stop-opacity:1;opacity:1"
          offset="1"
-         style="stop-color:#800000;stop-opacity:1;opacity:1" />
+         id="stop1648" />
     </linearGradient>
     <mask
        maskUnits="userSpaceOnUse"
@@ -187,8 +187,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.90509668"
-     inkscape:cx="74.69475"
-     inkscape:cy="364.81614"
+     inkscape:cx="-125.06941"
+     inkscape:cy="365.00486"
      inkscape:document-units="px"
      inkscape:current-layer="svg2"
      showgrid="true"
