@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=PulseEffectsTray
+Comment=A tray icon to be used together with PulseEffects
+Exec=pulseeffectstray
+Icon=/usr/share/pixmaps/pulseeffectstray.png
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=AudioVideo;
