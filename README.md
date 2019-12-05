@@ -4,7 +4,7 @@ This is some kind of quick'n'dirty stand-alone add-on for PulseEffects by Wellin
 
 https://github.com/wwmm/pulseeffects
 
-It creates a GTK3 status icon in the taskbar (tray) offering a menu to select from the available presets for in- and outputs.
+It creates a GTK3 status icon in the taskbar (tray) to toggle bypass state on left-click and offering a menu to select from the available presets for in- and outputs on right-click.
 Additionally the icon and PulseEffects can be killed.
 
 It requires Python3 and GTK3 for python. Make the file `pulseeffectstray` executable:
