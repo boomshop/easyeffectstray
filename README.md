@@ -15,6 +15,6 @@ chmod a+x pulseeffects
 
 And execute it.
 
-The icons are not required since graphics data is base64 encoded in the script itself.
+Alternatively run the script `install.sh` as root to install the script to `/usr/local/bin`, the icon to `usr/share/pixmaps` and the application starter to `/usr/share/applications`. This makes the icon available in application menus.
 
-If you'd like to bypass PulseEffects on click, create a fresh preset called `Bypass`, disable all signal processors and save the settings to the preset. It will appear in the tray icons menu then.
+The icons are not required since graphics data is base64 encoded in the script itself.
