@@ -17,4 +17,4 @@ And execute it.
 
 Alternatively run the script `install.sh` as root to install the script to `/usr/local/bin`, the icon to `usr/share/pixmaps` and the application starter to `/usr/share/applications`. This makes the tray icon available in application menus.
 
-The PNGs are not required on run-time since graphics data is base64 encoded in the script itself.
+The PNGs are not required on run-time since graphics data is base64 encoded in the script itself. So most minimal setup is to just have the executable lying around somewhere.
