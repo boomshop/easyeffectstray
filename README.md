@@ -15,6 +15,6 @@ chmod a+x pulseeffects
 
 And execute it.
 
-Alternatively run the script `install.sh` as root to install the script to `/usr/local/bin`, the icon to `usr/share/pixmaps` and the application starter to `/usr/share/applications`. This makes the icon available in application menus.
+Alternatively run the script `install.sh` as root to install the script to `/usr/local/bin`, the icon to `usr/share/pixmaps` and the application starter to `/usr/share/applications`. This makes the tray icon available in application menus.
 
-The icons are not required since graphics data is base64 encoded in the script itself.
+The icons are not required on run-time since graphics data is base64 encoded in the script itself.
