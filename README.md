@@ -18,3 +18,7 @@ And execute it.
 Alternatively run the script `install.sh` as root to install the script to `/usr/local/bin`, the icon to `usr/share/pixmaps` and the application starter to `/usr/share/applications`. This makes the tray icon available in application menus.
 
 The PNGs are not required on run-time since graphics data is base64 encoded in the script itself. So most minimal setup is to just have the executable lying around somewhere.
+
+If you'd like to bypass PulseEffects on click, create a fresh preset called `Bypass`, disable all signal processors and save the settings to the preset. It will appear in the tray icons menu then.
+
+If you have PulseEffects >= v4.7.4 installed, the icon can be used to toggle visibility of the window instead of toggling bypass. To make use of this feature, make sure to run the pulseeffects daemon (argument `--gapplication-service`) and start pulseeffectstray with the argument `-h`.

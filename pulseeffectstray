@@ -362,6 +362,7 @@ xUq3JCgs2TK94diwY3c0iqLubteNotHIjW1jPPRMi/qs/wQtKMt3lQOVOQAAAABJRU5ErkJggg=="""
 import re
 import os
 import io
+import sys
 import signal
 import base64
 import subprocess
@@ -388,12 +389,17 @@ class Icon ():
         self.icon.connect("popup-menu", self.rightclick)
         self.icon.connect("activate", self.leftclick)
         
-        out = subprocess.getoutput('pulseeffects -b 3')
-        if re.match(r"[0-1]", out):
-            self.has_bypass = True
-            self.set_icon(self.get_bypass())
-        else:
+        self.hidetotray = False
+        if len(sys.argv) > 1 and sys.argv[1] == '-h':
             self.set_icon(False)
+            self.hidetotray = True
+        else:
+            out = subprocess.getoutput('pulseeffects -b 3')
+            if re.match(r"[0-1]", out):
+                self.has_bypass = True
+                self.set_icon(self.get_bypass())
+            else:
+                self.set_icon(False)
     
     def quit (self, icon):
         os.system("pulseeffects -q")
@@ -429,10 +435,17 @@ class Icon ():
         self.menu.popup(None, None, None, self.icon, 0, time)
         
     def leftclick (self, icon):
-        if self.has_bypass:
-            self.toggle_bypass()
+        if self.hidetotray:
+            out = subprocess.getoutput("wmctrl -l|awk '{$3=\"\"; $2=\"\"; $1=\"\"; print $0}'|grep \"^   PulseEffects\"")
+            if out.strip() == "PulseEffects":
+                os.system('pulseeffects -h')
+            else:
+                os.system('pulseeffects')
         else:
-            self.rightclick(icon, 0, Gtk.get_current_event_time())
+            if self.has_bypass:
+                self.toggle_bypass()
+            else:
+                self.rightclick(icon, 0, Gtk.get_current_event_time())
     
     def add_presets(self, presets, title, menu):
         if not len(presets):
