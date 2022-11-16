@@ -394,7 +394,7 @@ class Icon ():
             self.set_icon(False)
             self.hidetotray = True
         else:
-            out = subprocess.getoutput('pulseeffects -b 3')
+            out = subprocess.getoutput('easyeffects -b 3')
             if re.match(r"[0-1]", out):
                 self.has_bypass = True
                 self.set_icon(self.get_bypass())
@@ -402,7 +402,7 @@ class Icon ():
                 self.set_icon(False)
     
     def quit (self, icon):
-        os.system("pulseeffects -q")
+        os.system("easyeffects -q")
         
     def rightclick (self, icon, button, time):
         self.menu = Gtk.Menu()
@@ -422,7 +422,7 @@ class Icon ():
         self.menu.append(sep);
         
         qpe = Gtk.MenuItem()
-        qpe.set_label("Quit PulseEffects")
+        qpe.set_label("Quit EasyEffects")
         qpe.connect("activate", self.quit)
         self.menu.append(qpe)
         
@@ -436,11 +436,11 @@ class Icon ():
         
     def leftclick (self, icon):
         if self.hidetotray:
-            out = subprocess.getoutput("wmctrl -l|awk '{$3=\"\"; $2=\"\"; $1=\"\"; print $0}'|grep \"^   PulseEffects\"")
-            if out.strip() == "PulseEffects":
-                os.system('pulseeffects -h')
+            out = subprocess.getoutput("wmctrl -l|awk '{$3=\"\"; $2=\"\"; $1=\"\"; print $0}'|grep \"^   EasyEffects\"")
+            if out.strip() == "EasyEffects":
+                os.system('easyeffects -h')
             else:
-                os.system('pulseeffects')
+                os.system('easyeffects')
         else:
             if self.has_bypass:
                 self.toggle_bypass()
@@ -461,10 +461,10 @@ class Icon ():
             menu.append(pitem)
     
     def load_preset(self, widget):
-        os.system('pulseeffects -l "%s"' % widget.get_label())
+        os.system('easyeffects -l "%s"' % widget.get_label())
         
     def presetlist (self):
-        out = subprocess.getoutput('pulseeffects -p')
+        out = subprocess.getoutput('easyeffects -p')
         pre = []
         for line in out.splitlines():
             arr = []
@@ -483,13 +483,13 @@ class Icon ():
             self.icon.set_from_pixbuf(self.image_active)
             
     def get_bypass (self):
-        out = subprocess.getoutput('pulseeffects -b 3')
+        out = subprocess.getoutput('easyeffects -b 3')
         return out == "1"
         
     def set_bypass (self, bypass):
         if bypass: s = "1"
         else: s = "2"
-        os.system('pulseeffects -b %s' % s)
+        os.system('easyeffects -b %s' % s)
         self.set_icon(bypass)
         
     def toggle_bypass (self):

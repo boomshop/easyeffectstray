@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=EasyEffectsTray
+Comment=A tray icon to be used together with EasyEffects
+Exec=easyeffectstray
+Icon=/usr/share/pixmaps/easyeffectstray.png
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=AudioVideo;
